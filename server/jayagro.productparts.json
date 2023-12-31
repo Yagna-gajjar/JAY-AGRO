@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "656333dd3eaa6ced84a735cf"
+  },
+  "productname": "Rod Ranger",
+  "productimage": "Rod_Ranger.png"
+},
+{
+  "_id": {
+    "$oid": "6563341b3eaa6ced84a735d1"
+  },
+  "productname": "Control Box",
+  "productimage": "Control_Box.png"
+},
+{
+  "_id": {
+    "$oid": "656334453eaa6ced84a735d3"
+  },
+  "productname": "Hammer clap",
+  "productimage": "Hammer_clap.png"
+},
+{
+  "_id": {
+    "$oid": "656334763eaa6ced84a735d5"
+  },
+  "productname": "Winch",
+  "productimage": "Winch.png"
+},
+{
+  "_id": {
+    "$oid": "6563349e3eaa6ced84a735d7"
+  },
+  "productname": "generaotr/alternator",
+  "productimage": "generaotralternator.png"
+}]

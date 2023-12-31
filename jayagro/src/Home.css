@@ -1,0 +1,238 @@
+#linkdecore {
+    text-decoration: none;
+}
+
+.btn {
+    color: white;
+}
+
+.btn:hover {
+    background: rgba(255, 164, 17, 0.2);
+    color: rgb(255, 166, 0);
+}
+
+.phones {
+    text-decoration-line: none;
+}
+
+.phones:hover {
+    border-bottom: 2px solid rgb(255, 164, 17);
+}
+
+#contentofhome {
+    text-align: justify;
+}
+
+#aboutofhome {
+    background-image: url("../src/img/download.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* herosection starts */
+
+#herosection h3 {
+    font-size: 25px;
+}
+
+#herosection h1 {
+    font-size: 40px;
+}
+
+#herosection h2 {
+    font-size: 35px;
+}
+
+#herosection h4 {
+    font-size: 20px;
+}
+
+#herosection p {
+    font-size: 15px;
+}
+
+@media (max-width: 640px) {
+
+    #herosection h3 {
+        font-size: 20px;
+    }
+
+    #herosection h1 {
+        font-size: 35px;
+    }
+
+    #herosection h2 {
+        font-size: 30px;
+    }
+
+    #herosection h4 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #herosection {
+        width: 90%;
+    }
+
+    #herosection h3 {
+        font-size: 15px;
+    }
+
+    #herosection h1 {
+        font-size: 30px;
+    }
+
+    #herosection h2 {
+        font-size: 25px;
+    }
+
+    #herosection h4 {
+        font-size: 10px;
+    }
+
+    #herosection p {
+        font-size: 10px;
+    }
+
+    #aboutofhome {
+        width: 90%;
+    }
+
+    #homedth {
+        width: 90%;
+    }
+}
+
+/* herosection ends */
+
+#card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card:hover {
+    transform: scale(1.05);
+}
+
+#card .card-title {
+    font-size: 25px;
+}
+
+#homelink {
+    text-decoration-line: none;
+    color: gray;
+}
+
+#content {
+    text-align: justify;
+}
+
+#homedth {
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+button .navbar-toggler:focus {
+    border: none;
+}
+
+/* Contact starts */
+.p-5 .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row .p-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-3 .mt-3 {
+    opacity: 0.5;
+}
+
+.row .rounded-circle {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contact ends */
+
+/* DTH rig start */
+
+#dthLink {
+    text-decoration: none;
+}
+
+#dthLink:hover {
+    transform: scale(1.03);
+    transition: all 0.3s linear;
+}
+
+#th {
+    color: #ffc107;
+}
+
+.t {
+    color: #ffc107;
+}
+
+/* DTH rig ends */
+
+/* DTHRigdetails starts */
+.container .shadow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* DTHRigdetails ends */
+
+/* Product Part starts */
+
+#bnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#productcard {
+    text-decoration: none;
+}
+
+#productcard:hover {
+    transform: scale(1.05);
+    transition: all 0.3s linear;
+    text-decoration: none;
+}
+
+/* Product Part end */
+
+/* Footer strat */
+.footer {
+    border: 1px solid rgb(255, 166, 0);
+}
+
+.card-header {
+    font-size: 25px;
+}
+
+.subemail {
+    border: 1px solid rgb(255, 166, 0);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+/* Footer ends */
