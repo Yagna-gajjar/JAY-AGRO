@@ -38,7 +38,7 @@ export default function Navbar() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get(process.env.REACT_APP_GETDTHRIG);
+            const response = await axios.get('http://localhost:5000/api/dthrig');
             setDth(response.data);
         }
         fetchData();
@@ -48,7 +48,7 @@ export default function Navbar() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get(process.env.REACT_APP_GETPRODUCTPART);
+            const response = await axios.get('http://localhost:5000/api/productparts');
             setProductpart(response.data);
         }
         fetchData();
@@ -92,8 +92,6 @@ export default function Navbar() {
                                         </button>
                                         <ul class="dropdown-menu">{a}
                                         </ul>
-
-
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown mb-1">
@@ -101,7 +99,6 @@ export default function Navbar() {
                                         <Link to="./ProductPart" class="nav-link text-truncate">Product Part</Link>
                                         <button type="button" class="btn btn-warning btn-sm text-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                                         </button>
-
                                         <ul class="dropdown-menu">
                                             {b}
                                         </ul>
@@ -109,6 +106,11 @@ export default function Navbar() {
                                 </li>
                                 <li class="nav-item">
                                     <Link to="./contact" class="nav-link text-truncate mb-1 ps-1 pe-1">Contact Us</Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link to="./LogIn" class="nav-link text-truncate mb-1 ps-1 pe-1">
+                                        <i className="bi bi-person-circle text-black" style={{ 'color': "black" }}></i>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

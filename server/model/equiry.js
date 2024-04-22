@@ -17,7 +17,11 @@ const equirySchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    RequirementDetails: String
+    RequirementDetails: String,
+    datetime: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 export default mongoose.model("equiry", equirySchema);

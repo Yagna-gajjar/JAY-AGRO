@@ -15,6 +15,31 @@
     text-decoration-line: none;
 }
 
+.form-control:focus {
+    border-color: rgb(255, 193, 7);
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.form-control:checked {
+    border-color: rgb(255, 193, 7);
+}
+
+.form-check-input {
+    border-color: transparent;
+
+}
+
+.form-check-input:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 0 transparent;
+}
+
+.form-check-input:checked {
+    background-color: rgb(255, 193, 7);
+    border-color: rgb(255, 193, 7);
+}
+
+
 .phones:hover {
     border-bottom: 2px solid rgb(255, 164, 17);
 }
@@ -236,3 +261,115 @@ button .navbar-toggler:focus {
 
 
 /* Footer ends */
+
+/* erro 404 */
+
+.error_404 {
+    display: flex;
+    justify-content: center;
+}
+
+/* edit enquiry */
+
+option:hover {
+    background-color: #ffc107;
+}
+
+/* Log In page */
+
+.SignIn_img {
+    transition: all 2s ease-in;
+    filter: drop-shadow(0px 0px 6px #ffc107);
+}
+
+.login_text {
+    font-size: 15px;
+}
+
+.login_icons {
+    color: #ffbf00;
+    padding-inline: 20px;
+    font-size: 20px;
+}
+
+.singnIn_Inputs {
+    color: gray;
+}
+
+.pass_eye {
+    position: relative;
+    top: 15px;
+    right: 40px;
+    color: #ffa407;
+    font-size: 20px;
+}
+
+@media (min-width: 992px) {
+
+    .SignIn_img {
+        width: 40%;
+    }
+
+    .SignIn_form {
+        width: 60%;
+    }
+
+    .login_text {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .pass_eye {
+        top: 7px;
+    }
+}
+
+.singnIn_Inputs {
+    outline: none;
+    border: none;
+    width: 600px;
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.493);
+}
+
+@media (max-width: 720px) {
+
+    .singnIn_Inputs {
+        width: 500px;
+    }
+
+}
+
+
+@media (max-width: 617px) {
+
+    .singnIn_Inputs {
+        width: 400px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .singnIn_Inputs {
+        width: 350px;
+    }
+
+    .login_text {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 460px) {
+
+    .singnIn_Inputs {
+        width: 250px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .singnIn_Inputs {
+        width: 200px;
+    }
+}

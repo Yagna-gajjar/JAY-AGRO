@@ -11,6 +11,16 @@ import Enquiry from './Enquiry';
 import ProductPart from './ProductPart';
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import EditContact from './EditContact.js';
+import EditEnquiry from './EditEnquiry.js';
+import LogIn from './LogIn.js';
+import Signup from './Signup.js';
+import PvtRoute from './PvtRoute.js';
+import AllEnquiry from './AllEnquiry.js';
+import AllContact from './AllContact.js';
+import AddProductPart from './AddProductPart.js';
+import AdminProductparts from './adminProductparts.js';
+import EditProductPart from './EditProductPart.js';
 
 function App() {
 
@@ -18,7 +28,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(process.env.REACT_APP_GETDTHRIG);
+      const response = await axios.get('http://localhost:5000/api/dthrig');
       setDth(response.data);
     }
     fetchData();
@@ -28,7 +38,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(process.env.REACT_APP_GETPRODUCTPART);
+      const response = await axios.get('http://localhost:5000/api/productparts');
       setProductpart(response.data);
     }
     fetchData();
@@ -61,7 +71,18 @@ function App() {
           {Dth}{Productpart}
           <Route path='/ProductPart' element={<ProductPart />} />
           <Route path={"/dthdetails/:id"} element={<DTHRigDetails />} />
+          <Route path={'/editcontact/:id'} element={<EditContact />} />
+          <Route path={'/editenquiry/:id'} element={<EditEnquiry />} />
         </Route>
+        <Route element={<PvtRoute />}>
+          <Route path={'/getallenquiry'} element={<AllEnquiry />} />
+          <Route path={'/getallcontact'} element={<AllContact />} />
+          <Route path={'/addproductpart'} element={<AddProductPart />} />
+          <Route path={'/getallproductparts'} element={<AdminProductparts />} />
+          <Route path={'/editproductpart/:id'} element={<EditProductPart />} />
+        </Route>
+        <Route path={'/LogIn'} element={<LogIn />} />
+        <Route path={'/SignUp'} element={<Signup />} />
       </Routes>
     </BrowserRouter >
   </>

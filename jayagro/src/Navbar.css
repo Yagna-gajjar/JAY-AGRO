@@ -70,7 +70,7 @@ ul {
   }
 }
 
-@media (max-width: 455px) {
+@media (max-width: 503px) {
 
   .logoimg {
     width: 40px;
@@ -95,4 +95,22 @@ ul {
     padding: 0px 5px 0px 5px;
     font-size: 10px;
   }
+}
+
+@media (max-width: 398px) {
+  .nav-link {
+    font-size: 9px;
+  }
+
+  .nav-item {
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 398px) {
+
+  .nav-link {
+    font-size: 7px;
+  }
+
 }

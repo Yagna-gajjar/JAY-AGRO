@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Enquiry from "./Enquiry";
-import "./DTHrig.css"
+import "./DTHrig.css";
+import Loader from "./Loader.js";
 
 export default function DTHrig() {
+    let [loading, setLoading] = useState(false);
 
     const [showModel, setShowModel] = useState(false);
 
@@ -34,9 +36,12 @@ export default function DTHrig() {
     }
 
     useEffect(() => {
+
+        setLoading(true);
         const fetchData = async () => {
-            const response = await axios.get(process.env.REACT_APP_GETDTHRIG);
+            const response = await axios.get('http://localhost:5000/api/dthrig');
             setDth(response.data);
+            setLoading(false);
         }
         fetchData();
     }, [])
@@ -44,63 +49,68 @@ export default function DTHrig() {
 
     let FormatedDetails = dth.map((e) => {
         return (
-            <Link to={"/dthdetails/" + e._id} class="m-sm-4 col-lg col-sm-12 border border-2 border-black" id="dthLink">
-                <img src={require('./img/' + e.dthimage)} class="img-fluid" />
-                <div class="card-body">
-                    <h5 class="card-title text-warning"> {e.dthname} DTH Rig</h5>
-                    <p class="card-text">
-                        <table class="table">
+            <>
+                <Link to={"/dthdetails/" + e._id} class="m-sm-4 col-lg col-sm-12 border border-2 border-black" id="dthLink">
+                    <img src={require('./img/' + e.dthimage)} class="img-fluid" />
+                    <div class="card-body">
+                        <h5 class="card-title text-warning"> {e.dthname} DTH Rig</h5>
+                        <p class="card-text">
+                            <table class="table">
 
-                            <tbody>
-                                <tr>
-                                    <th id="th" scope="row">1</th>
-                                    <td className="t">Hole Diameter</td>
-                                    <td>{e.HD}</td>
-                                </tr>
-                                <tr>
-                                    <th id="th" scope="row">2</th>
-                                    <td className="t">Drilling Depth </td>
-                                    <td>{e.DD}</td>
-                                </tr>
-                                <tr>
-                                    <th id="th" scope="row">3</th>
-                                    <td className="t">Truck</td>
-                                    <td>{e.Truck}</td>
-                                </tr>
-                                <tr>
-                                    <th id="th" scope="row">4</th>
-                                    <td className="t">Application</td>
-                                    <td>{e.Application}</td>
-                                </tr>
-                                <tr>
-                                    <th id="th" scope="row">5</th>
-                                    <td className="t">Formation</td>
-                                    <td>{e.Formation}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6 mb-2">
-                            <Link className="openModal btn btn-warning btn-block text-truncate" id={e.dthname} onClick={passdthname} >Enquiry Now</Link>
-                            {/* <Link to={"/Enquiry" + e.dthname} class="btn btn-warning btn-block text-truncate">Enquiry Now</Link> */}
+                                <tbody>
+                                    <tr>
+                                        <th id="th" scope="row">1</th>
+                                        <td className="t">Hole Diameter</td>
+                                        <td>{e.HD}</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="th" scope="row">2</th>
+                                        <td className="t">Drilling Depth </td>
+                                        <td>{e.DD}</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="th" scope="row">3</th>
+                                        <td className="t">Truck</td>
+                                        <td>{e.Truck}</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="th" scope="row">4</th>
+                                        <td className="t">Application</td>
+                                        <td>{e.Application}</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="th" scope="row">5</th>
+                                        <td className="t">Formation</td>
+                                        <td>{e.Formation}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <Link className="openModal btn btn-warning btn-block text-truncate" id={e.dthname} onClick={passdthname} >Enquiry Now</Link>
+                                {/* <Link to={"/Enquiry" + e.dthname} class="btn btn-warning btn-block text-truncate">Enquiry Now</Link> */}
 
-                        </div>
-                        <div class="col-md-6 mb-2">
-                            <Link to={"/dthdetails/" + e._id} class="btn btn-warning btn-block text-truncate">View more</Link>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <Link to={"/dthdetails/" + e._id} class="btn btn-warning btn-block text-truncate">View more</Link>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </Link >
+                </Link >
+            </>
         );
     })
     return (
         <>
-            <div><h1 className="text-center text-warning m-5">DTH Rig</h1></div>
-            <div className="container">
-                <div className="row">{FormatedDetails}</div>
-            </div >
-            {showModel && <Mymodal />};
+            {loading ? <Loader /> :
+                <>
+                    <div><h1 className="text-center text-warning m-5">DTH Rig</h1></div>
+                    <div className="container">
+                        <div className="row">{FormatedDetails}</div>
+                    </div >
+                    {showModel && <Mymodal />};
+                </>}
         </>
     );
 } 

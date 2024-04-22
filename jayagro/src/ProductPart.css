@@ -1,3 +1,8 @@
+#productcard {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 576px) {
     #productcard {
         margin: 20px;

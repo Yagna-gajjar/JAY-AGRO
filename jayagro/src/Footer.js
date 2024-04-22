@@ -27,7 +27,7 @@ export default function Footer() {
     const submitForm = async (e) => {
         e.preventDefault();
 
-        await axios.post(process.env.REACT_APP_POSTSUB, state)
+        await axios.post('http://localhost:5000/api/subscribe', state)
             .then((response) => {
                 toast.success(response.data.msg, { position: "top-center" });
                 nav("/");
