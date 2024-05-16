@@ -25,8 +25,7 @@
 }
 
 .form-check-input {
-    border-color: transparent;
-
+    border-color: gray;
 }
 
 .form-check-input:focus {
