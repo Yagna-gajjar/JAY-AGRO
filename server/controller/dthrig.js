@@ -384,6 +384,7 @@ export const addProductpart = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
+
 export const updateProductpart = async (req, res) => {
     try {
         const id = req.params.id;
