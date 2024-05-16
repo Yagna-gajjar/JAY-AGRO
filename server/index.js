@@ -12,16 +12,16 @@ app.use(cors());
 dotenv.config();
 
 
-mongoose.connect("mongodb+srv://yagnagajjar364:yagnaISgendi@cluster0.mdqgmjd.mongodb.net/jayagro").then(() => {
+// mongoose.connect("mongodb+srv://yagnagajjar364:yagnaISgendi@cluster0.mdqgmjd.mongodb.net/jayagro").then(() => {
 
-    console.log("DB connected");
+//     console.log("DB connected");
 
-    app.listen(5000, () => {
-        console.log(`server is running on port: 5000`);
-    })
+//     app.listen(5000, () => {
+//         console.log(`server is running on port: 5000`);
+//     })
 
-}).catch(error => console.log(error));
+// }).catch(error => console.log(error));
 app.use("/", (req, res) => {
     res.send("server is running");
 })
-app.use("/", route); 
+// app.use("/", route); 
