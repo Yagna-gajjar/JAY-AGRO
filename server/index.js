@@ -11,6 +11,7 @@ app.use(bodyParser.json())
 app.use(cors());
 dotenv.config();
 
+
 mongoose.connect("mongodb+srv://yagnagajjar364:yagnaISgendi@cluster0.mdqgmjd.mongodb.net/jayagro").then(() => {
 
     console.log("DB connected");
