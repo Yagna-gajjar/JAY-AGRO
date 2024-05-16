@@ -23,4 +23,4 @@ mongoose.connect(mongodburl).then(() => {
     })
 
 }).catch(error => console.log(error));
-app.use("/api", route); 
+app.use("/", route); 

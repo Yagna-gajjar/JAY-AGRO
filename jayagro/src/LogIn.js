@@ -46,7 +46,7 @@ export default function LogIn() {
 
     const submitForm = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:5000/api/getforadmin", user)
+        await axios.post("http://localhost:5000/getforadmin", user)
             .then((response) => {
                 console.log(response.data.check);
                 if (response.data.check) {

@@ -23,7 +23,7 @@ export default function EditContact() {
     useEffect(() => {
         setLoading(true);
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/api/onecontactuser/' + id);
+            const response = await axios.get('http://localhost:5000/onecontactuser/' + id);
             setContactuser({
                 username: response.data.username,
                 Email: response.data.Email,
@@ -44,7 +44,7 @@ export default function EditContact() {
 
     const submitForm = async (e) => {
         e.preventDefault();
-        await axios.put('http://localhost:5000/api/editcontactuser/' + id, contactusers)
+        await axios.put('http://localhost:5000/editcontactuser/' + id, contactusers)
             .then((response) => {
                 toast.success(response.data.msg, { position: "top-center", iconTheme: { primary: 'rgb(255,193,7)', secondary: 'white' } });
                 nav("/");

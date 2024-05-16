@@ -16,7 +16,7 @@ export default function EditProductPart() {
   const [file, setFile] = useState({})
   const nav = useNavigate();
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/oneProductpart/${id}`)
+    axios.get(`http://localhost:5000/oneProductpart/${id}`)
       .then((response) => {
         setProductparts({
           productname: response.data.productname,
@@ -31,7 +31,7 @@ export default function EditProductPart() {
     formData.append('file', file);
     formData.append('productname', productparts.productname);
     formData.append('productimage', productparts.productimage);
-    await axios.patch(`http://localhost:5000/api/editProductpart/${id}`, formData)
+    await axios.patch(`http://localhost:5000/editProductpart/${id}`, formData)
       .then((response) => {
         toast.success(response.data.msg, { position: "top-center", iconTheme: { primary: 'rgb(255,193,7)', secondary: 'white' } });
         nav("/getallproductparts");

@@ -36,7 +36,7 @@ export default function ProductPart() {
     useEffect(() => {
         setLoading(true);
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/api/productparts');
+            const response = await axios.get('http://localhost:5000/productparts');
             setProductpart(response.data);
             setLoading(false);
         }

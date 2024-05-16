@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:5000/api/dthrig');
+      const response = await axios.get('http://localhost:5000/dthrig');
       setDth(response.data);
     }
     fetchData();
@@ -38,7 +38,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:5000/api/productparts');
+      const response = await axios.get('http://localhost:5000/productparts');
       setProductpart(response.data);
     }
     fetchData();

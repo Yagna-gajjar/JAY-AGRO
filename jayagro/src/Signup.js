@@ -45,7 +45,7 @@ export default function Signup() {
 
     const submitForm = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:5000/api/createadmin", user)
+        await axios.post("http://localhost:5000/createadmin", user)
             .then((response) => {
                 toast.success(response.data.msg, { position: "top-center" });
                 localStorage.setItem('useremail', user.Email);

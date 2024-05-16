@@ -19,7 +19,7 @@ export default function AddProductPart() {
     formData.append('productname', productparts.productname);
     formData.append('productimage', productparts.productimage);
     console.log(formData);
-    await axios.post('http://localhost:5000/api/addproductpart', formData)
+    await axios.post('http://localhost:5000/addproductpart', formData)
       .then((response) => {
         toast.success(response.data.msg, { position: "top-center", iconTheme: { primary: 'rgb(255,193,7)', secondary: 'white' } });
         nav('.././getallproductparts')

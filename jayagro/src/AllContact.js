@@ -10,7 +10,7 @@ export default function AllContact() {
 
         setLoading(true);
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/api/getallcontact');
+            const response = await axios.get('http://localhost:5000/getallcontact');
             setContact(response.data);
             setLoading(false);
         }
