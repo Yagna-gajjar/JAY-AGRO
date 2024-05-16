@@ -11,15 +11,15 @@ app.use(bodyParser.json())
 app.use(cors());
 dotenv.config();
 
-// const port = process.env.port;
-// const mongodburl = process.env.mongostring;
+const port = process.env.port;
+const mongodburl = process.env.mongostring;
 
-mongoose.connect("mongodb+srv://yagnagajjar364:yagnaISgendi@cluster0.mdqgmjd.mongodb.net/jayagro").then(() => {
+mongoose.connect(mongodburl).then(() => {
 
     console.log("DB connected");
 
     app.listen(5000, () => {
-        console.log(`server is running on port: 5000`);
+        console.log(`server is running on port: ${port}`);
     })
 
 }).catch(error => console.log(error));
