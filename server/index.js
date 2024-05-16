@@ -24,4 +24,4 @@ mongoose.connect("mongodb+srv://yagnagajjar364:yagnaISgendi@cluster0.mdqgmjd.mon
 app.use("/", (req, res) => {
     res.send("server is running");
 })
-// app.use("/", route); 
+app.use("/", route); 
