@@ -11,8 +11,9 @@ app.use(bodyParser.json())
 app.use(cors());
 dotenv.config();
 
+const MongoUrl = process.env.mongourl;
 
-mongoose.connect("mongodb+srv://yagnagajjar364:yagnaISgendi@cluster0.mdqgmjd.mongodb.net/jayagro").then(() => {
+mongoose.connect(MongoUrl).then(() => {
 
     console.log("DB connected");
 
@@ -21,7 +22,4 @@ mongoose.connect("mongodb+srv://yagnagajjar364:yagnaISgendi@cluster0.mdqgmjd.mon
     })
 
 }).catch(error => console.log(error));
-app.use("/", (req, res) => {
-    res.send("server is running");
-})
 app.use("/", route); 
