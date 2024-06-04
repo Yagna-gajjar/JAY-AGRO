@@ -12,14 +12,14 @@ app.use(cors());
 dotenv.config();
 
 const MongoUrl = process.env.mongourl;
+const Port = process.env.port || 4000;
 
 mongoose.connect(MongoUrl).then(() => {
-
     console.log("DB connected");
-
-    app.listen(5000, () => {
-        console.log(`server is running on port: 5000`);
+    app.listen(Port, () => {
+        console.log(`server is running on port: ${Port}`);
     })
 
 }).catch(error => console.log(error));
+
 app.use("/", route); 

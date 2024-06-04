@@ -4,6 +4,9 @@ import { Dthrig, Dthdetails, allproductparts, oneproductpart, equiryusers, subsc
 
 const route = express.Router();
 
+route.get("/", (req, res) => {
+    res.status(200).json("server started");
+});
 route.get("/dthrig", Dthrig);
 route.get("/dthdetails/:id", Dthdetails);
 route.get("/productparts", allproductparts);
