@@ -9,7 +9,7 @@ export default function AllEnquiry() {
 
         setLoading(true);
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/getallenquiry');
+            const response = await axios.get('https://jay-agro.onrender.com/getallenquiry');
             setEnquiry(response.data);
             setLoading(false);
         }

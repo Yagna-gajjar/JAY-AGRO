@@ -1,7 +1,6 @@
 import express from "express";
 import { Dthrig, Dthdetails, allproductparts, oneproductpart, equiryusers, subscribeusers, contactusers, onecontact, editcontactusers, editenquiry, oneenquiry, creatadmin, getforadmin, getallenquiry, getallcontact, addProductpart, upload, deleteProductpart, updateProductpart } from "../controller/dthrig.js";
 
-
 const route = express.Router();
 
 route.get("/", (req, res) => {

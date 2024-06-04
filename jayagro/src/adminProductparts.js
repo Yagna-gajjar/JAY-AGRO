@@ -7,10 +7,15 @@ export default function AdminProductparts() {
 
     let [loading, setLoading] = useState(false);
     const [productpart, setProductpart] = useState([]);
+
+    // dotenv.config();
+    // const productpart_api = process.env.REACT_APP_GETPRODUCTPART;
+    // const deleteProductpart_api = process.env.
+
     useEffect(() => {
         setLoading(true);
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/productparts');
+            const response = await axios.get("https://jay-agro.onrender.com/productparts");
             setProductpart(response.data);
             setLoading(false);
         }
@@ -18,7 +23,7 @@ export default function AdminProductparts() {
     }, [])
 
     const deleteProductpart = async (Productpartid) => {
-        await axios.delete(`http://localhost:5000/deleteProductpat/${Productpartid}`)
+        await axios.delete("https://jay-agro.onrender.com/deleteProductpat/" + Productpartid)
             .then((response) => {
                 setProductpart((preProductpart) => preProductpart.filter((user) => user._id !== Productpartid));
                 toast.success(response.data.msg, { position: "top-center", iconTheme: { primary: 'rgb(255,193,7)', secondary: 'white' } });

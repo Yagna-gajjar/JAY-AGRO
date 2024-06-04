@@ -39,7 +39,7 @@ export default function DTHrig() {
 
         setLoading(true);
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/dthrig');
+            const response = await axios.get('https://jay-agro.onrender.com/dthrig');
             setDth(response.data);
             setLoading(false);
         }

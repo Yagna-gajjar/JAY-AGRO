@@ -33,7 +33,7 @@ export default function ContactUs() {
         e.preventDefault();
         setLoading(true);
 
-        await axios.post('http://localhost:5000/contact', state)
+        await axios.post('https://jay-agro.onrender.com/contact', state)
             .then((response) => {
                 toast.success(response.data.msg, { position: "top-center", iconTheme: { primary: 'rgb(255,193,7)', secondary: 'white' } });
                 nav('/');

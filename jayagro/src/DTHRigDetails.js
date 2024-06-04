@@ -45,7 +45,7 @@ export default function DTHRigDetails() {
     useEffect(() => {
         setLoading(true);
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/dthdetails/' + id);
+            const response = await axios.get('https://jay-agro.onrender.com/dthdetails/' + id);
             setDthdetail({
                 dthname: response.data.dthname,
                 // dthimage: response.data.dthimage,

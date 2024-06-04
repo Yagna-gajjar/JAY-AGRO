@@ -12,6 +12,9 @@ export default function AddProductPart() {
   const [productparts, setProductparts] = useState(productpart);
   const [file, setFile] = useState({})
   const nav = useNavigate();
+  // dotenv.config();
+  // const addproductpart_api = process.env.REACT_APP_ADDPRODUCTPART;
+
   const submitForm = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -19,13 +22,12 @@ export default function AddProductPart() {
     formData.append('productname', productparts.productname);
     formData.append('productimage', productparts.productimage);
     console.log(formData);
-    await axios.post('http://localhost:5000/addproductpart', formData)
+    await axios.post("https://jay-agro.onrender.com/addproductpart", formData)
       .then((response) => {
         toast.success(response.data.msg, { position: "top-center", iconTheme: { primary: 'rgb(255,193,7)', secondary: 'white' } });
         nav('.././getallproductparts')
       }).catch(error => console.log(error.response))
   }
-
 
   return (
     <div className='shadow-lg  m-5'>

@@ -43,7 +43,7 @@ export default function Enquiry(props) {
     const submitForm = async (e) => {
         e.preventDefault();
         setLoading(true);
-        await axios.post('http://localhost:5000/equiry', state)
+        await axios.post('https://jay-agro.onrender.com/equiry', state)
             .then((response) => {
                 toast.success(response.data.msg, { position: "top-center", iconTheme: { primary: 'rgb(255,193,7)', secondary: 'white' } });
             }).catch(error => console.log(error.response))
