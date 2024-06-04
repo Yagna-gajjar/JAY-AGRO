@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import dthrig from "../model/dthrig.js";
 import productparts from "../model/productpart.js";
 import equiry from "../model/equiry.js";
-import subscribe from "../model/subscribe.js";
+import subscribe from "../model/Subscribe.js";
 import contact from "../model/contact.js";
 import admin from "../model/admin.js";
 import multer from "multer";
